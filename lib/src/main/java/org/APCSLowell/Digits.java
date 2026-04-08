@@ -12,15 +12,19 @@ public class Digits {
      *  *Precondition*: `num >= 0`
      */
     public Digits(int num) {
-        /* To be implemented in part (a) */
-        throw new UnsupportedOperationException();
+        String fake = "" + num;
+        digits = new ArrayList<Integer>();
+        for(int i = 0; i<fake.length(); i++)
+            digits.add(Integer.parseInt(fake.substring(i,i+1)));
     }
 
     /** Returns `true` if the digits in this `Digits` object are in strictly increasing order;
      *      `false` otherwise.
      */
     public boolean isStrictlyIncreasing() {
-        /* To be implemented in part (b) */
-        throw new UnsupportedOperationException();
+        for(int i=0; i<digits.size()-1; i++)
+            if(digits.get(i)>digits.get(i+1))
+                return false;
+        return true;
     }
 }
